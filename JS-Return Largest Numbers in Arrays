@@ -1,0 +1,53 @@
+/*
+
+<b>Instructions<b>
+
+"Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i]."
+
+<b>Starting Code<b>
+
+function largestOfFour(arr) {
+  return arr;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+
+<b>My Solution<b>
+
+Probably a little clunky, but it gets the job done. This was a challenge I was able to code completely on my own without looking up any hints on FCC.
+
+*/
+function largestOfFour(arr) {
+
+//Creating 4 variables here, each will be used to store the value of the highest number in their respective arrays. Used -99999999999 to account for negative numbers. 
+
+let arr1Greatest = -99999999999;
+let arr2Greatest = -99999999999;
+let arr3Greatest = -99999999999;
+let arr4Greatest = -99999999999;
+
+//Created four separate loops here, one for each array. The loops go through the arrays, find the highest number in the array, and assign it to the correct variable. 
+
+for (let i = 0; i < arr[0].length; i++) 
+{if (arr[0][i] > arr1Greatest) {arr1Greatest = arr[0][i]}}
+
+for (let j = 0; j < arr[1].length; j++) 
+{if (arr[1][j] > arr2Greatest) {arr2Greatest = arr[1][j]}}
+
+for (let k = 0; k < arr[2].length; k++) 
+{if (arr[2][k] > arr3Greatest) {arr3Greatest = arr[2][k]}}
+
+for (let l = 0; l < arr[3].length; l++) 
+{if (arr[3][l] > arr4Greatest) {arr4Greatest = arr[3][l]}}
+
+let greatest4Numbers = [arr1Greatest, arr2Greatest, arr3Greatest, arr4Greatest]; //Simply creates a new array consisting of the highest numbers from each given array. 
+
+return greatest4Numbers;
+}
+
+largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]);
+
+
