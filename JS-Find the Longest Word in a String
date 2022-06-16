@@ -1,0 +1,45 @@
+/* Javascript Coding Challenge #4 - Find the Longest Word in a String
+
+Instructions
+--------------------------------------------------------------------
+Return the length of the longest word in the provided sentence.
+
+Your response should be a number.
+--------------------------------------------------------------------
+
+Starting Code
+--------------------------------------------------------------------
+function findLongestWordLength(str) {
+  return str.length;
+}
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+--------------------------------------------------------------------
+Final Code
+--------------------------------------------------------------------
+*/
+
+function findLongestWordLength(str) {
+  let wordArray = str.split(" "); // Takes the str argument and turns it into an array, with each word being a unique array item. 
+  let longestWord = ""; // Creates an empty string variable. 
+  for (let i = 0; i < wordArray.length; i++)  //creates a loop to go through each item in the array. 
+  {if (wordArray[i].length > longestWord.length) {longestWord = wordArray[i];} 
+  
+  /* If the length of a particular array item is longer than the length of the
+  string variable longestWord (starts at 0), then assign the value of that item to the longestWord variable. */
+  console.log(longestWord)}
+  
+  return longestWord.length; //returns a number equal to the length of the longest word in the array. 
+}
+
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); // Will return the value 6, as longestWord will = jumped
+
+
+
+
+
+
+
+
+
