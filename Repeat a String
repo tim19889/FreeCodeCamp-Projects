@@ -1,0 +1,33 @@
+/*Instructions
+------------------------------------------------------------------
+Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. 
+For the purpose of this challenge, do not use the built-in .repeat() method.
+
+
+Starting Code
+-----------------------------------------------------------------
+
+function repeatStringNumTimes(str, num) {
+  return str;
+}
+
+repeatStringNumTimes("abc", 3);
+
+
+
+Ending Code 
+----------------------------------------------------------------
+*/ 
+
+function repeatStringNumTimes(str, num) {
+let incrementedString = "";
+while (num > 0) {
+
+incrementedString += str; //while (num > 0) this adds str to incrementedString and decreases num by 1 each time it runs.
+num--
+
+}
+  return incrementedString;
+}
+
+console.log(repeatStringNumTimes("abc", 3));
