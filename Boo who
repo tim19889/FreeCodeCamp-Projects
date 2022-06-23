@@ -1,0 +1,26 @@
+/*Instructions
+------------------------------------------------------------------------------
+Check if a value is classified as a boolean primitive. Return true or false.
+
+Boolean primitives are true and false.
+
+
+Starting Code
+------------------------------------------------------------------------------
+
+
+
+Final Code 
+------------------------------------------------------------------------------
+/*
+
+function booWho(bool) {
+  if (typeof bool === "boolean") 
+  {return true;}
+  else {return false;}
+  
+}
+
+booWho(null);
+
+//By far the easiest Basic Algorithm Scripting challenge I've done on FreeCodeCamp. 
