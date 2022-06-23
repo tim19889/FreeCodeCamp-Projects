@@ -1,0 +1,36 @@
+/* Instructions 
+-----------------------------------------------
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like the and of.
+
+
+Starting Code
+------------------------------------------------
+function titleCase(str) {
+  return str;
+}
+
+titleCase("I'm a little tea pot");
+
+
+
+
+Final Code
+-------------------------------------------------
+*/ 
+
+function titleCase(str) {
+  str = str.toLowerCase();
+  let myArray = str.split(" ");
+  let firstLetters = [];
+  for (let i = 0; i < myArray.length; i++) {
+    firstLetters.push(myArray[i].replace(myArray[i][0], myArray[i][0].toUpperCase()))
+    
+  
+  }
+let finalSentence = firstLetters.join(" ");
+return finalSentence;  
+}
+
+console.log(titleCase("I'm a little tea pot"));
