@@ -1,0 +1,36 @@
+/*Instructions --------------------------------------
+
+You are given two arrays and an index.
+
+Copy each element of the first array into the second array, in order.
+
+Begin inserting elements at index n of the second array.
+
+Return the resulting array. The input arrays should remain the same after the function runs.
+
+
+Starting Code --------------------------------------
+
+
+function frankenSplice(arr1, arr2, n) {
+  return arr2;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+
+
+Final Code -----------------------------------------
+*/ 
+
+function frankenSplice(arr1, arr2, n) {
+  
+let arr3 = arr2.slice(n, arr2.length); //Takes the elements in arr2 starting at n index up until the end of the array and slices into arr3.
+let arr4 = arr2.slice(0, n) //Takes the elements from index 0 of arr2 up to index n and slices them into arr4.
+let arr5 = arr4.concat(arr1); //Concats arr1 to arr4 and assigns the result to arr5. 
+let arr6 = arr5.concat(arr3); //Adds arr3 onto the end of arr5 and assigns to arr6.
+return arr6;
+
+}
+
+console.log(frankenSplice([1,2,3], [4,5,6], 2));
