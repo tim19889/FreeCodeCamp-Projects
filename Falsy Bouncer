@@ -1,0 +1,35 @@
+/*Instructions 
+--------------------------------------------------------
+Falsy Bouncer
+Remove all falsy values from an array.
+
+Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+Hint: Try converting each value to a Boolean.
+
+
+
+Starting Code
+---------------------------------------------------------
+
+function bouncer(arr) {
+  return arr;
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+
+
+Final Code
+---------------------------------------------------------
+*/
+
+function bouncer(arr) {
+  let arr2 = [];
+arr2 = arr.filter(element => Boolean(element) === true); //Uses filter() to test each element for truthiness. If Boolean(element) === true it gets added to arr2. 
+
+arr = arr2; //assigns arr the value of arr2.
+return arr; 
+}
+
+bouncer([7, "ate", "", false, 9]);
