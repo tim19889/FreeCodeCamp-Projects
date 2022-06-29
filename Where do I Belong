@@ -1,0 +1,37 @@
+/* Instructions 
+--------------------------------------------
+Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. 
+The returned value should be a number.
+
+For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+
+Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and 
+greater than 5 (index 1).
+
+
+Starting Code
+--------------------------------------------
+function getIndexToIns(arr, num) {
+  return num;
+}
+
+getIndexToIns([40, 60], 50);
+
+
+Final Code
+-------------------------------------------- */ 
+
+function getIndexToIns(arr, num) {
+  let sortedArray = arr.sort((a, b) => a-b); //First sort the array and save it to a variable called sortedArray.
+  let findMyIndex = sortedArray.findIndex(number => {return number >= num}); //Next, find the first index where a given number is equal to or greater than num. 
+                                                                            //Save that index number to variable findMyIndex. 
+if (findMyIndex === -1) {sortedArray.push(num)} //If there is no such number (num is greater than any number in array for instance), push() num into the array. 
+else {sortedArray.splice((findMyIndex), 0, num);}//Else add num into the array at the index number held by findMyIndex. 
+  console.log(sortedArray)
+  if (findMyIndex === -1) {return sortedArray.length -1} //If num needs to be pushed onto the end of the array, return sortedArray.lengh -1 to fulfill the task. 
+  else {return findMyIndex} //Else, simply return the value of findMyIndex variable. 
+}
+
+console.log(getIndexToIns([2, 5, 10], 1));
+console.log(getIndexToIns([2, 5, 10], 15));
+console.log(getIndexToIns([43, 54, 10, 2, 64, 89, 23, 90, 105], 50));
