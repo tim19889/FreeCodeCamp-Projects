@@ -1,0 +1,41 @@
+/*Instructions
+--------------------------------------
+Chunky Monkey
+Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+
+
+
+
+Starting Code
+--------------------------------------
+function chunkArrayInGroups(arr, size) {
+  return arr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+
+
+Final Code
+--------------------------------------*/
+
+function chunkArrayInGroups(arr, size) {
+  let chunkyMonkeyArr = [];
+
+for (let a = 0; a < arr.length; a++) {
+  if (typeof arr[a] === "string") {for (let c = 0; c < arr.length; c = c + size) {
+  chunkyMonkeyArr.push(arr.join("").substring(c,(c + size)).split(""));}}
+
+else {
+   for (let i = 0; i < arr.length; i = i + size) {
+  chunkyMonkeyArr.push(arr.join("").substring(i,(i + size)).split(""));}
+  for (let j = 0; j < chunkyMonkeyArr.length; j++) {
+for (let k = 0; k < chunkyMonkeyArr[j].length; k++) {
+  if (typeof chunkyMonkeyArr[j][k] === "string") {chunkyMonkeyArr[j][k] = parseInt(chunkyMonkeyArr[j][k])}
+}
+  }
+  console.log(chunkyMonkeyArr);
+  }
+  return chunkyMonkeyArr
+}
+}
