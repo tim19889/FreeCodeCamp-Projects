@@ -1,0 +1,39 @@
+Instructions
+--------------------------------------
+Mutations
+Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+
+The arguments ["hello", "hey"] should return false because the string hello does not contain a y.
+
+Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.
+
+
+
+Starting Code
+--------------------------------------
+function mutation(arr) {
+  return arr;
+}
+
+mutation(["hello", "hey"]);
+
+
+
+Final Code
+--------------------------------------
+function mutation(arr) {
+let trueFalseArray = []; //Will store the true/false results of looping through each letter using the .includes() method. 
+let newArr = [arr[0].toLowerCase(), arr[1].toLowerCase()]; //Creates a new array containing each word in lower case form.
+let arr1 = newArr[0].split(""); //splits the word up so that each letter is an element of array arr1.
+let arr2 = newArr[1].split(""); //splits the word up so that each letter is an element of array arr2.
+for (let i = 0; i < arr2.length; i++) {
+    trueFalseArray.push(arr1.includes(arr2[i])) //Loops through all letters in arr2 and tests with the .includes() method to see if they are present in arr1.  
+  } //Then pushes all true/false results to trueFalseArray. 
+  if (trueFalseArray.includes(false) === true) {return false} //If the trueFalseArray includes any instances of false, then return false. Else, return true. 
+  else {return true}; 
+}
+
+
+console.log(mutation(["Hellyo", "hey"]));
