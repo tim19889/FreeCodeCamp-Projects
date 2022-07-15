@@ -31,7 +31,7 @@ let letterArray = title.split("");
 if (letterArray[0] === " ") {letterArray.shift();}
 for (let i = 0; i < letterArray.length; i++) {
   if (letterArray[i] === " " && letterArray[i + 1] === " ") {
-letterArray.splice([i],1);
+delete letterArray[i];
   } 
 }
 for (let j = 0; j < letterArray.length; j++) {
