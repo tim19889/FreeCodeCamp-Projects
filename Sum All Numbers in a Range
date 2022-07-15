@@ -1,0 +1,43 @@
+Instructions
+---------------------------------------------------
+/*We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.
+
+For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+
+
+
+Starting Code
+---------------------------------------------------
+function sumAll(arr) {
+  return 1;
+}
+
+sumAll([1, 4]);
+
+
+
+
+Final Code
+---------------------------------------------------*/ 
+function sumAll(arr) {
+  let newArray = [];
+  let workingArray = arr.slice()
+
+  if (workingArray[0] < workingArray[1]) {
+    newArray.push(workingArray[0]);
+while (workingArray[0] < workingArray[1]) 
+{newArray.push(workingArray[0] + 1); 
+workingArray[0] = workingArray[0] + 1}
+  }
+  
+else {
+  newArray.push(workingArray[1]);
+  while (workingArray[1] < workingArray[0]) {
+    newArray.push(workingArray[1] + 1);
+    workingArray[1] = workingArray[1] + 1;
+  }
+     }
+return newArray.reduce((a, b) => a + b);
+}
+
+sumAll([10, 5])
