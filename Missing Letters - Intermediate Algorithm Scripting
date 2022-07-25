@@ -1,0 +1,35 @@
+/*Instructions 
+----------------------------------
+Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+
+fearNotLetter("abce") should return the string d.
+Passed:fearNotLetter("abcdefghjklmno") should return the string i.
+Passed:fearNotLetter("stvwx") should return the string u.
+Passed:fearNotLetter("bcdf") should return the string e.
+Passed:fearNotLetter("abcdefghijklmnopqrstuvwxyz") should return undefined.
+
+
+Starting Code
+------------------------------------
+function fearNotLetter(str) {
+  return str;
+}
+
+fearNotLetter("abce");
+
+
+
+Final Code
+------------------------------------*/
+function fearNotLetter(str) {
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+let subStr = alphabet.substring(alphabet.indexOf(str[0]), alphabet.indexOf(str[str.length - 1]));
+
+for (let i = 0; i < subStr.length; i++) {
+  if (subStr[i] !== str[i]) {
+return subStr[i];    
+  }
+}
+};
