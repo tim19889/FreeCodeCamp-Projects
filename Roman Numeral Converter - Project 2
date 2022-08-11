@@ -99,7 +99,7 @@ let rNumerals = "";
 for (let i = 0; i < integers.length; i++) {
   while (num >= integers[i]) {
     num -= integers[i];
-    rNumerals += romanNumerals[i] + " ";
+    rNumerals += romanNumerals[i];
   } 
 }
 return rNumerals;
