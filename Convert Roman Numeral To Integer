@@ -1,0 +1,47 @@
+/*Instructions
+--------------------------
+Convert a given roman numeral into an integer. 
+
+
+Final Code
+--------------------------*/ 
+function romanToInteger(rNum) {
+ const integers = [1000, "M", 900, "CM", 500, "D", 400, "CD", 100, "C", 90, "XC", 50, "L", 40, "XL", 10, "X", 9, "IX", 5, "V", 4, "IV", 1, "I"];
+let num = 0; 
+let rNumArr = rNum.split("");
+
+for (let i = 0; i < rNumArr.length; i++) {
+
+if (rNumArr[i] === "I" && rNumArr[i+1] === "X") {
+  rNumArr.splice(i,1);
+  rNumArr[i] = "IX";
+}
+if (rNumArr[i] === "I" && rNumArr[i+1] === "V") {
+  rNumArr.splice(i,1);
+  rNumArr[i] = "IV";
+}
+if (rNumArr[i] === "X" && rNumArr[i+1] === "L") {
+  rNumArr.splice(i,1);
+  rNumArr[i] = "XL";
+}
+if (rNumArr[i] === "X" && rNumArr[i+1] === "C") {
+  rNumArr.splice(i,1);
+  rNumArr[i] = "XC";
+}
+if (rNumArr[i] === "C" && rNumArr[i+1] === "D") {
+  rNumArr.splice(i,1);
+  rNumArr[i] = "CD";
+}
+if (rNumArr[i] === "C" && rNumArr[i+1] === "M") {
+  rNumArr.splice(i,1);
+  rNumArr[i] = "CM";
+}
+}
+
+for (let i = 0; i < rNumArr.length; i++) {
+num += integers[integers.indexOf(rNumArr[i])-1] 
+}
+return num;
+}
+
+console.log(romanToInteger("XCIV"));
