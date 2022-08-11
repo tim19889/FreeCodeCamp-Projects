@@ -1,0 +1,22 @@
+/*Instructions 
+------------------------------------
+Convert a given number to a Roman Numeral
+
+
+
+Final Code
+-------------------------------------*/
+
+function convertToInteger(num) {
+ const romanNumerals = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+ const integers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+let rNumerals = ""; 
+for (let i = 0; i < integers.length; i++) {
+  while (num >= integers[i]) {
+    num -= integers[i];
+    rNumerals += romanNumerals[i] + " ";
+  } 
+}
+return rNumerals;
+}
+console.log(convertToInteger(3500));
