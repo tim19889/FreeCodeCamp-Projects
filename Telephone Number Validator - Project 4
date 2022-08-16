@@ -1,0 +1,112 @@
+/*Instructions
+----------------------------
+Return true if the passed string looks like a valid US phone number.
+
+The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):
+
+555-555-5555
+(555)555-5555
+(555) 555-5555
+555 555 5555
+5555555555
+1 555 555 5555
+For this challenge you will be presented with a string such as 800-692-7753 or 8oo-six427676;laskdjf. 
+Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. 
+If the country code is provided, you must confirm that the country code is 1. Return true if the string is a valid US phone number; otherwise return false.
+
+telephoneCheck("555-555-5555") should return a boolean.
+Passed:telephoneCheck("1 555-555-5555") should return true.
+Passed:telephoneCheck("1 (555) 555-5555") should return true.
+Passed:telephoneCheck("5555555555") should return true.
+Passed:telephoneCheck("555-555-5555") should return true.
+Passed:telephoneCheck("(555)555-5555") should return true.
+Passed:telephoneCheck("1(555)555-5555") should return true.
+Passed:telephoneCheck("555-5555") should return false.
+Passed:telephoneCheck("5555555") should return false.
+Passed:telephoneCheck("1 555)555-5555") should return false.
+Passed:telephoneCheck("1 555 555 5555") should return true.
+Passed:telephoneCheck("1 456 789 4444") should return true.
+Passed:telephoneCheck("123**&!!asdf#") should return false.
+Passed:telephoneCheck("55555555") should return false.
+Passed:telephoneCheck("(6054756961)") should return false.
+Passed:telephoneCheck("2 (757) 622-7382") should return false.
+Passed:telephoneCheck("0 (757) 622-7382") should return false.
+Passed:telephoneCheck("-1 (757) 622-7382") should return false.
+Passed:telephoneCheck("2 757 622-7382") should return false.
+Passed:telephoneCheck("10 (757) 622-7382") should return false.
+Passed:telephoneCheck("27576227382") should return false.
+Passed:telephoneCheck("(275)76227382") should return false.
+Passed:telephoneCheck("2(757)6227382") should return false.
+Passed:telephoneCheck("2(757)622-7382") should return false.
+Passed:telephoneCheck("555)-555-5555") should return false.
+Passed:telephoneCheck("(555-555-5555") should return false.
+Passed:telephoneCheck("(555)5(55?)-5555") should return false.
+Passed:telephoneCheck("55 55-55-555-5") should return false.
+Passed:telephoneCheck("11 555-555-5555") should return false.
+
+
+Starting Code
+----------------------------
+function telephoneCheck(str) {
+  return true;
+}
+
+telephoneCheck("555-555-5555");
+
+
+
+
+Final Code
+----------------------------*/
+function telephoneCheck(str) {
+  let digitCount = 0; 
+  let dashCount = 0; 
+  let flag;
+  const phoneNumArr = str.split("");
+
+phoneNumArr.forEach((item) => {
+  if (isNaN(item) === false && item !== " ") {
+    digitCount++;
+    flag = true;} 
+    })
+    
+//Counts how many valid digits are in the string. If less than 10 or greater than 11, the switch below has a default case to make the flag false. 
+
+switch (digitCount) {
+  case 11:
+  if (phoneNumArr[0] !== 1 && phoneNumArr[0] !== "1") {
+    return false
+  }
+  else {digitCount = 10;}
+
+//Checks if the first digit is a 1. If it's not a 1, the function will return false. If it is a 1, digitCount = 10 and further tests are performed. 
+
+case 10: 
+ 
+if (phoneNumArr.includes("(") && phoneNumArr[phoneNumArr.indexOf("(")+4] === ")" || phoneNumArr.includes("(") === false) 
+{flag = true;}
+else {flag = false; break;}
+
+if (phoneNumArr.includes(")") && phoneNumArr[phoneNumArr.indexOf(")")-4] === "(" || phoneNumArr.includes(")") === false) 
+{flag = true}
+else {flag = false; break;}
+break;
+
+default:
+flag = false;
+break; 
+}
+
+phoneNumArr.forEach((item) => {
+      if (isNaN(item) === true && item !== "(" && item !== ")" && item !== "-" && item !== " ") {flag = false;}
+    })
+//Looks for any characters that are not digits, parenthesis, spaces, or dashes and if any are found the flag = false. 
+
+phoneNumArr.forEach((item) => {
+  if (item === "-") {dashCount++}
+})
+if (dashCount >= 3) {
+  flag = false; 
+}
+return flag; 
+}
