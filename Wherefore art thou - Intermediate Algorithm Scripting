@@ -45,3 +45,26 @@ collection.forEach((obj) => {
   return arr;
 }
 whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3});
+
+
+/*Alternate Code
+-------------------------------------
+function whatIsInAName(collection, source) {
+  const arr = [];
+  // Only change code below this line
+  const tempArr = []
+for (let i = 0; i < collection.length; i++) {
+  for (let prop in source) {
+    tempArr.push(Object.hasOwn(collection[i], prop) && collection[i][prop] === source[prop]);
+    if (tempArr.length === Object.keys(source).length && tempArr.includes(false) !== true) {
+    arr.push(collection[i]); 
+    tempArr.splice(0) 
+    }
+    else if (tempArr.length === Object.keys(source).length && tempArr.includes(false) === true) {tempArr.splice(0)}
+  }
+}
+  // Only change code above this line
+  return arr;
+}
+
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));*/
