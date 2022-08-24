@@ -22,6 +22,7 @@ pairElement("GCG");
 
 
 Final Code
+First Try
 ----------------------------------------------*/
 function pairElement(str) {
   let dnaArray = [];
@@ -43,3 +44,27 @@ function pairElement(str) {
   }
   return dnaArray; 
 }
+pairElement("GCG")
+
+/*--------------------------------------------------
+Second Try
+
+function pairElement(str) {
+  const dnaArr = [];
+  str.split("").forEach((letter) => {
+    if (letter === "T") {
+      dnaArr.push(["T", "A"])
+    }
+    if (letter === "A") {
+      dnaArr.push(["A", "T"])}
+      if (letter === "G") {
+      dnaArr.push(["G", "C"])}
+      if (letter === "C") {
+      dnaArr.push(["C", "G"])}
+  })
+  return dnaArr; 
+}
+pairElement("GCG");
+*/ 
+
+
