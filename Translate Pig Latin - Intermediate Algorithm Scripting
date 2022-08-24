@@ -22,6 +22,7 @@ translatePigLatin("consonant");
 
 
 Final Code
+First Try
 ----------------------------------------------*/
 function translatePigLatin(str) {
   let consonants = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
@@ -37,7 +38,6 @@ whatAmI = "startsWithConsonant";}
 else {
  whatAmI = "startsWithVowel";
 }
-
   switch (whatAmI) {
     case "allConsonants":
       charArray.push("a", "y");
@@ -56,9 +56,35 @@ else {
       charArray.push("w","a","y");
       break;
       }
-
 str = charArray.join(""); 
   return str;
 }
-
 translatePigLatin("rhythm");
+
+/*---------------------------------------------
+Second Try*/
+
+function translatePigLatin(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  const strArr = str.split("");
+  let flag = 0;
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr.some((letter) => vowels.includes(letter)) === false) {
+      strArr.push("a", "y");
+      break;
+    }
+    if (vowels.includes(strArr[0]) === true) {
+      strArr.push("w", "a", "y");
+      break;
+    }
+    else {
+      strArr.push(strArr.shift());
+      flag = 1; 
+    }
+  }
+  if (flag === 1) {
+    strArr.splice(strArr.length-3,1)
+  }
+  return strArr.join("");
+}
+console.log(translatePigLatin("rhythm"));
