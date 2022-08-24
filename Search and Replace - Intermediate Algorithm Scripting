@@ -22,6 +22,7 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 
 Final Code
+Firs Try
 ----------------------------------------------------------------------
 */
 
@@ -39,3 +40,18 @@ function myReplace(str, before, after) {
 }
 
 console.log(myReplace("I think we should look up there", "up", "Down"));
+
+/*-------------------------------------------------------------------------
+Final Code
+Second Try*/
+
+function myReplace(str, before, after) {
+  const wordArr = str.split(" ");
+  let afterArr = after.split("");
+  if (before[0] === before[0].toUpperCase()) {
+    afterArr[0] = afterArr[0].toUpperCase();
+  }
+  else {afterArr[0] = afterArr[0].toLowerCase()};
+  return str.replace(before, afterArr.join(""));
+}
+console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
