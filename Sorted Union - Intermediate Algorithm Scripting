@@ -32,3 +32,19 @@ function uniteUnique(arr) {
   return finalArray
 }
 uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
+
+
+/*Alternate Code
+-------------------------------------------
+function uniteUnique(arr) {
+  const rtnArr = [];
+  for (let i = 0; i < arguments.length; i++) {
+    arguments[i].forEach((num) => {
+      if (rtnArr.includes(num) === false) {
+        rtnArr.push(num)
+      }
+    })
+  }
+  return rtnArr
+}
+uniteUnique([1, 2, 3], [5, 2, 1]);*/
