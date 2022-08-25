@@ -46,3 +46,17 @@ function convertHTML(str) {
 }
 
 convertHTML("Dolce & Gabbana");
+
+/*Alternate Code
+------------------------------------
+function convertHTML(str) {
+  const htmlArr = ["&", "&amp;", '"', "&quot;", "'", "&apos;", "<", "&lt;", ">", "&gt;"]
+  const txtArr = str.split("");
+  txtArr.forEach((element) => {
+if (htmlArr.includes(element) === true) {
+  txtArr[txtArr.indexOf(element)] = htmlArr[htmlArr.indexOf(element) + 1];
+}
+  })
+  return txtArr.join("");
+}
+console.log(convertHTML("Dolce & Gabbana"));*/
