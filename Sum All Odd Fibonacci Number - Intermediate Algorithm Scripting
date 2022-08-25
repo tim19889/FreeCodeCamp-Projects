@@ -42,3 +42,21 @@ function sumFibs(num) {
   return count;
 }
 console.log(sumFibs(75024));
+
+/*Alternate Code
+--------------------------------------
+function sumFibs(num) {
+  const numArr = [1,1];
+  let counter = 0; 
+  let sum = 0;
+  for (let i = 0; i < num; i++) {
+      counter = numArr[i] + numArr[i+1];
+      numArr.push(counter);
+      if (counter <= num && counter % 2 === 1) {
+        sum+=counter;
+      }
+  }
+  return sum+2;
+}
+console.log(sumFibs(75025));*/
+
