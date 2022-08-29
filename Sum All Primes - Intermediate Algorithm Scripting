@@ -44,3 +44,22 @@ if (isComposite === "false") {
 return count + 2
 }
 sumPrimes(977);
+
+/*Alternate Method
+---------------------------------*/
+function sumPrimes(num) {
+  let count = 0;
+  for (let i = 2; i <= num; i++) {
+    let isPrime = true; 
+for (let j = 0; j < 100; j++) {
+  if (j !== i && j !== 1 && i % j === 0) {
+  break;
+}
+if (j === 99 && isPrime === true) {
+  count += i;
+}
+}
+  }
+  return count; 
+}
+console.log(sumPrimes(10));
