@@ -36,12 +36,28 @@ function smallestCommons(arr) {
   }
   sortedArr2.unshift(sortedArr1[0]);
   sortedArr2.push(sortedArr1[arr.length-1])
-  
 let b = sortedArr2[1];
 while (Boolean(sortedArr2.every((number) => {return b % number === 0})) === false) {
   b++;
 }
 return b
 }
-
 smallestCommons([2,10]);
+
+
+
+/*Alternate Code
+------------------------------------*/
+function smallestCommons(arr) {
+  const sortedArr = arr.sort((a,b) => a - b);
+  let num = sortedArr[sortedArr.length-1];
+
+  for (let i = sortedArr[0] + 1; i < arr.sort((a,b) => a - b)[arr.sort((a,b) => a - b).length -1]; i++) {
+sortedArr.push(i)
+  }
+while (sortedArr.every((digit) => num % digit === 0) === false) {
+  num = num + sortedArr[sortedArr.length-1];
+} 
+return num;
+}
+console.log(smallestCommons([23,18]));
