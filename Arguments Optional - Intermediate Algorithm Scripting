@@ -50,3 +50,22 @@ else {
 }
 }
 addTogether(5)(7);
+
+/*Alternate Code
+-----------------------------*/
+function addTogether() {
+  let a = arguments[0];
+  let b = arguments[1]
+  if (a === parseInt(a) && b === parseInt(b)) {
+         return a + b;
+       }
+  if (arguments.length === 1 && a === parseInt(a)) {return function(c){
+      if (c === parseInt(c)){
+         b = c;
+         return a + b
+      }
+     } 
+  }
+}
+console.log(addTogether(5)(3));
+
