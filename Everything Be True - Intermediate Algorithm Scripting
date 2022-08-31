@@ -37,9 +37,8 @@ truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", rol
 
 Final Code
 ----------------------------------------*/
-function truthCheck(collection, pre) {
-  
-  return collection.every((obj) => {return Boolean(obj[pre])})
-}
 
-truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number");
+function truthCheck(collection, pre) {
+return (collection.every((obj) => Boolean(obj[pre])))
+}
+truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number"););
