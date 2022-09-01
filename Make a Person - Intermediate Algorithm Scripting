@@ -72,3 +72,33 @@ const Person = function(firstAndLast) {
   };
   return firstAndLast;
 };
+
+/*Alternate Code
+----------------------------------------*/
+const Person = function(firstAndLast) {
+  const nameArr = [];
+  nameArr.push(firstAndLast.split(" "));
+  this.getFullName = function() {
+    return nameArr[0][0] + " " + nameArr[0][1];
+  };
+  this.setFullName = function(fullName) {
+    nameArr.splice(0);
+    nameArr.push(fullName.split(" "))
+  }
+  this.getFirstName = function() {
+    return nameArr[0][0];
+  }
+  this.setFirstName = function(fName) {
+    nameArr[0].splice(0,1);
+    nameArr[0].unshift(fName);
+  }
+  this.getLastName = function() {
+    return nameArr[0][1];
+  }
+  this.setLastName = function(lName) {
+    nameArr[0].splice(1,1);
+    nameArr[0].push(lName);
+  }
+};
+const bob = new Person('Bob Ross');
+console.log(bob.getFirstName())
