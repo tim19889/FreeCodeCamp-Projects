@@ -25,11 +25,7 @@ Final Code
 */
 
 function bouncer(arr) {
-  let arr2 = [];
-arr2 = arr.filter(element => Boolean(element) === true); //Uses filter() to test each element for truthiness. If Boolean(element) === true it gets added to arr2. 
-
-arr = arr2; //assigns arr the value of arr2.
-return arr; 
+  return arr.filter((item) => Boolean(item) === true)
 }
 
 bouncer([7, "ate", "", false, 9]);
