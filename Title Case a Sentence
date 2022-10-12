@@ -16,7 +16,7 @@ titleCase("I'm a little tea pot");
 
 
 
-Final Code
+Final Code - First Try
 -------------------------------------------------
 */ 
 
@@ -33,4 +33,20 @@ let finalSentence = firstLetters.join(" ");
 return finalSentence;  
 }
 
-console.log(titleCase("I'm a little tea pot"));
+
+/*
+Final Code - Second Try
+---------------------------------------------------*/
+function titleCase(str) {
+  const strArr = str.toLowerCase().split("");
+  strArr[0] = str[0].toUpperCase();
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i-1] === " ") {
+      strArr[i] = strArr[i].toUpperCase();
+    }
+  }
+  return strArr.join("");
+}
+
+titleCase("I'm a little tea pot");
