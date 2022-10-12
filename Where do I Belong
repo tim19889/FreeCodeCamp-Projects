@@ -31,7 +31,20 @@ else {sortedArray.splice((findMyIndex), 0, num);}//Else add num into the array a
   if (findMyIndex === -1) {return sortedArray.length -1} //If num needs to be pushed onto the end of the array, return sortedArray.lengh -1 to fulfill the task. 
   else {return findMyIndex} //Else, simply return the value of findMyIndex variable. 
 }
-
 console.log(getIndexToIns([2, 5, 10], 1));
-console.log(getIndexToIns([2, 5, 10], 15));
-console.log(getIndexToIns([43, 54, 10, 2, 64, 89, 23, 90, 105], 50));
+
+/* Second Try
+------------------------------------------*/
+function getIndexToIns(arr, num) {
+  const sortedArr = arr.sort(function(a, b){return a-b});
+  for (let i = 0; i < sortedArr.length; i++) {
+if (sortedArr[sortedArr.length-1] < num) {
+  return sortedArr.length;
+}
+  else if (sortedArr[i] >= num) {
+      return i;
+    }
+  }
+  return 0;
+}
+
