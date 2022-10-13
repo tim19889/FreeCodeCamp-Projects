@@ -39,3 +39,15 @@ for (let k = 0; k < chunkyMonkeyArr[j].length; k++) {
   return chunkyMonkeyArr
 }
 }
+
+/*
+Final Code - Second Try 
+-----------------------------------------*/
+function chunkArrayInGroups(arr, size) {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i+=size) {
+    newArr.push(arr.slice(i,i+size))
+  }
+ return newArr;
+}
+chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);
