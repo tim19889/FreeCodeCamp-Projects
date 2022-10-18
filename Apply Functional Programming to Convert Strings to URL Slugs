@@ -43,3 +43,21 @@ return letterArray.join("").toLowerCase();
 }
 // Only change code above this line
 console.log(urlSlug(" Winter Is  Coming"));
+
+/*
+Second Try - Final Code 
+------------------------------------------------*/
+
+function urlSlug(title) {
+const titleArr = title.toLowerCase().trim().split("");
+for (let i = 1; i < titleArr.length; i++) {
+if (titleArr[i] === " " && titleArr[i+1] === " ") {
+    titleArr[i] = "-"; titleArr.splice(i+1,1);
+  }
+  else if (titleArr[i] === " ") {
+    titleArr[i] = "-";
+  } 
+}
+return titleArr.join("");
+}
+console.log(urlSlug(" Winter Is  Coming"));
