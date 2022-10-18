@@ -41,3 +41,19 @@ return newArray.reduce((a, b) => a + b);
 }
 
 sumAll([10, 5])
+
+
+/*
+Final Code - Second Try
+-------------------------------------------------------*/
+function sumAll(arr) {
+  const sortedArr = arr.sort((a,b) => {return a-b});
+  const addMe = [];
+  for (let i = sortedArr[0]; i <= sortedArr[sortedArr.length-1]; i++) {
+    addMe.push(i);
+  }
+  return addMe.reduce((a,b) => {
+    return a+b;
+  })
+}
+sumAll([10, 5]);
