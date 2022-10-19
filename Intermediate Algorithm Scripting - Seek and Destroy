@@ -31,3 +31,12 @@ for (let i = 0; i < arr.length; i++ ){
   return arr;
 }
 console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5));
+
+
+
+/*Second Try - Final Code
+------------------------------------*/
+function destroyer(arr) {
+  return arr.filter((element) => {return Object.values(arguments).includes(element) === false})
+}
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3);
