@@ -1,0 +1,32 @@
+/*Instructions
+------------------------------------------
+Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+spinalCase("This Is Spinal Tap") should return the string this-is-spinal-tap.
+Passed:spinalCase("thisIsSpinalTap") should return the string this-is-spinal-tap.
+Passed:spinalCase("The_Andy_Griffith_Show") should return the string the-andy-griffith-show.
+Passed:spinalCase("Teletubbies say Eh-oh") should return the string teletubbies-say-eh-oh.
+Passed:spinalCase("AllThe-small Things") should return the string all-the-small-things.
+
+
+Starting Code
+------------------------------------------
+function spinalCase(str) {
+  return str;
+}
+spinalCase('This Is Spinal Tap');
+
+
+Final Code 
+------------------------------------------*/
+function spinalCase(str) {
+  const strArr = str.split("");
+  for (let i = 0; i < strArr.length; i++) {
+    if ((/[A-Z]/g).test(strArr[i]) === true && (/[a-z]/g).test(strArr[i-1]) === true) {strArr[i-1] = strArr[i-1] + "-"}
+else if ((/[a-zA-Z]/g).test(strArr[i]) === false) {
+  strArr[i] = "-";
+}
+  }
+  return strArr.join("").toLowerCase()
+}
+spinalCase('thisIsSpinalTap');
