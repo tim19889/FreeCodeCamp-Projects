@@ -88,3 +88,30 @@ function translatePigLatin(str) {
   return strArr.join("");
 }
 console.log(translatePigLatin("rhythm"));
+
+/*Third Try
+----------------------------------------/*
+function translatePigLatin(str) {
+  const tempArr = [];
+  const strArr = str.split("");
+  const vowels = ["a", "e", "i", "o", "u"];
+  if (vowels.includes(str[0])) {
+    return str + "way";
+  }
+  else if (strArr.every((letter) => vowels.includes(letter) === false)) {
+    return str + "ay"
+  }
+  else {
+    for (let i = 0; i < strArr.length; i++) {
+     if (vowels.includes(strArr[i]) === false) {
+       tempArr.push(strArr[i])
+     }
+     else {
+       strArr.splice(0,tempArr.length);
+       return strArr.concat(tempArr).join("") + "ay"
+     }
+    }
+  }
+}
+
+console.log(translatePigLatin("glove"));
