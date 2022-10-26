@@ -43,8 +43,9 @@ function sumFibs(num) {
 }
 console.log(sumFibs(75024));
 
+
 /*Alternate Code
---------------------------------------
+--------------------------------------*/
 function sumFibs(num) {
   const numArr = [1,1];
   let counter = 0; 
@@ -59,4 +60,23 @@ function sumFibs(num) {
   return sum+2;
 }
 console.log(sumFibs(75025));*/
+
+
+/*Alternate Code
+----------------------------------------*/
+
+function sumFibs(num) {
+  let count = 2;
+  const fibNums = [1,1];
+  for (let i = 0; i < fibNums.length; i++) {
+    if (fibNums[i+1] <= num) {
+      fibNums.push(fibNums[i] + fibNums[i+1])
+    }
+    if (fibNums[i+2] % 2 === 1 && fibNums[i+2] <= num) {
+      count += fibNums[i+2];
+    }
+  }
+  return count;
+  }
+sumFibs(1000);
 
