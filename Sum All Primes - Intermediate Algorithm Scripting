@@ -63,3 +63,24 @@ if (j === 99 && isPrime === true) {
   return count; 
 }
 console.log(sumPrimes(10));
+
+
+/*Alternate Method
+-----------------------------------*/
+function sumPrimes(num) {
+  const nums = [];
+  const primes = [2];
+  let count = 2;
+  for (let i = 2; i < num; i++) {
+    nums.push(i);
+    count++;
+    if (nums.every((digit) => {
+     return count % digit !== 0
+    })) {
+      primes.push(count)
+    }
+  }
+  return primes.reduce((a,b) => {return a+b})
+}
+
+sumPrimes(977);
