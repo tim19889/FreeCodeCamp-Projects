@@ -50,3 +50,14 @@ function palindrome(str) {
   else {return false}
 }
 palindrome("1 eye for of 1 eye.");
+
+
+/*
+Alternate Code
+----------------------------------------------*/
+function palindrome(str) {
+ if (str.match(/[A-Za-z0-9]/g).join("").toLowerCase() === str.match(/[A-Za-z0-9]/g).reverse().join("").toLowerCase()) {
+   return true;
+ }
+ else {return false}
+}
