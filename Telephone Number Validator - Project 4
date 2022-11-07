@@ -110,3 +110,23 @@ if (dashCount >= 3) {
 }
 return flag; 
 }
+
+
+/*Second Try
+--------------------------------------*/
+function telephoneCheck(str) {
+  let numLength = str.match(/\d+/g).join("").length; //Counts how many numbers are in the string. 
+if (/^(?=.*[0-9])[- +()0-9]+$/.test(str) === false || numLength < 10 || numLength > 11) {
+  return false
+} //Tests if anything other than spaces, dashes, parenthesis, or number is in the string and returns false if there is. Also validates numLength is 10 or 11. 
+if (numLength === 11 && str[0] !== "1") {
+  return false
+}
+  for (let i = 0; i < str.length; i++) {
+if (str[i] === "(" && str[i+4] !== ")" || str[i] === ")" && str[i-4] !== "(" || str[i] === "-" && str[i+4] !== "-" && i < 6) {
+  return false
+}
+  }
+  return true; 
+}
+console.log(telephoneCheck("55 55-55-555-5"));
