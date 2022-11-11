@@ -57,3 +57,19 @@ function sumAll(arr) {
   })
 }
 sumAll([10, 5]);
+
+
+
+/*Final Code - Third Try 
+--------------------------------------------------------*/
+function sumAll(arr) {
+  const sortedArr = arr.sort(function(a,b) {return a-b});
+  let count = sortedArr[0];
+  while (count < sortedArr[1]-1) {
+    count++;
+    sortedArr.push(count);
+  }
+   return sortedArr.reduce((a,b) => {return a+b})
+}
+
+sumAll([1,4]);
