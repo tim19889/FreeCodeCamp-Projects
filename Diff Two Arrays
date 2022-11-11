@@ -35,6 +35,7 @@ function diffArray(arr1, arr2) {
 
 console.log(diffArray([1, 2, 3, 7, 5], [1, 2, 3, 4, 5, 9]));
 
+
 /*
 Final Code - Second Try 
 -------------------------------------------*/
@@ -47,5 +48,14 @@ function diffArray(arr1, arr2) {
  }
   }
   return newArr;
+}
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+
+/* Final Code - Third Try
+---------------------------------------------*/
+function diffArray(arr1, arr2) {
+  return arr1.concat(arr2).filter((item) => {return arr1.includes(item) === false || arr2.includes(item) === false})
 }
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
