@@ -48,7 +48,7 @@ whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3});
 
 
 /*Alternate Code
--------------------------------------
+-------------------------------------*/
 function whatIsInAName(collection, source) {
   const arr = [];
   // Only change code below this line
@@ -68,3 +68,26 @@ for (let i = 0; i < collection.length; i++) {
 }
 
 console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));*/
+
+/*Alternate Code 
+----------------------------------------*/
+function whatIsInAName(collection, source) {
+  const arr = [];
+  // Only change code below this line
+  let count = 0; 
+  for (let i = 0; i < collection.length; i++) {
+    for (let prop in source) {
+      if (collection[i][prop] === source[prop]) {
+        count++;
+      }
+    }
+    if (count === Object.keys(source).length) {
+        arr.push(collection[i])
+      }
+      count = 0;
+  }
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
