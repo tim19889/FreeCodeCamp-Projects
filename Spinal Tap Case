@@ -30,3 +30,20 @@ else if ((/[a-zA-Z]/g).test(strArr[i]) === false) {
   return strArr.join("").toLowerCase()
 }
 spinalCase('thisIsSpinalTap');
+
+
+/*Alternate Code 
+-------------------------------------------*/
+function spinalCase(str) {
+const strArr = str.split("");
+for (let i = 1; i < strArr.length; i++) {
+if (/^[a-zA-Z-]+$/.test(strArr[i]) === false) {
+  strArr[i] = "-";
+} 
+if (strArr[i] === strArr[i].toUpperCase() && strArr[i] !== "-" && strArr[i-1] !== "-") {
+  strArr[i-1]+="-";
+}
+}
+return strArr.join("").toLowerCase()
+}
+spinalCase('AllThe-small Things');
