@@ -113,5 +113,23 @@ function translatePigLatin(str) {
     }
   }
 }
+console.log(translatePigLatin("glove"));
 
+/*Fourth Try 
+-----------------------------------------------/*
+function translatePigLatin(str) {
+  const vowelArr = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"];
+  const strArr = str.split("");
+  if (vowelArr.includes(str[0])) {return str+"way"};
+  if (strArr.every((letter) => {return vowelArr.includes(letter) === false}) === true) {return str+"ay"}
+  for (let i = 0; i < strArr.length; i++) {
+    if (vowelArr.includes(strArr[i]) === false) {
+      strArr.push(strArr[i]);
+      strArr.splice(i,1);
+      i--;
+    }
+    else {break;}
+  }
+return strArr.join("")+"ay";
+}
 console.log(translatePigLatin("glove"));
