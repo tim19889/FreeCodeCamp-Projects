@@ -84,3 +84,22 @@ function sumPrimes(num) {
 }
 
 sumPrimes(977);
+
+/*Alternate Method
+-------------------------------------*/
+function sumPrimes(num) {
+  let count = 0;
+  let isPrime;
+  for (let i = num; i > 1; i--) {
+    isPrime = true; 
+for (let j = 2; j < i; j++) {
+  if (i % j === 0) {
+    isPrime = false;
+    break;
+  }
+}
+ if (isPrime === true) {count+=i}
+ }
+return count;
+}
+sumPrimes(977);
