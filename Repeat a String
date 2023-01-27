@@ -10,12 +10,9 @@ Starting Code
 function repeatStringNumTimes(str, num) {
   return str;
 }
-
 repeatStringNumTimes("abc", 3);
 
-
-
-Ending Code 
+First Try
 ----------------------------------------------------------------
 */ 
 
@@ -25,9 +22,18 @@ while (num > 0) {
 
 incrementedString += str; //while (num > 0) this adds str to incrementedString and decreases num by 1 each time it runs.
 num--
-
 }
   return incrementedString;
 }
-
 console.log(repeatStringNumTimes("abc", 3));
+
+/*Second Try 
+----------------------------------------------------------------------*/
+function repeatStringNumTimes(str, num) {
+  let returnStr = "";
+  for (let i = 0; i < num; i++) {
+    returnStr+=str;
+  }
+  return returnStr;
+}
+repeatStringNumTimes("abc", 3);
