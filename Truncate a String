@@ -11,8 +11,7 @@ function truncateString(str, num) {
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
 
 
-
-Ending Code
+First Try
 ---------------------------------------------------- */
 function truncateString(str, num) {
 
@@ -24,5 +23,13 @@ if (str.length > num) {
   return truncatedString + "...";}
 else {return str;}
 }
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
 
-console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+
+/* Second Try
+-------------------------------------------------------*/
+function truncateString(str, num) {
+  let rtnStr = str.substring(0,num);
+  return (num < str.length ? rtnStr+"..." : rtnStr) 
+}
+truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length -2);
