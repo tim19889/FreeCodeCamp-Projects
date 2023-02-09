@@ -40,8 +40,32 @@ for (let k = 0; k < chunkyMonkeyArr[j].length; k++) {
 }
 }
 
+
+/* Final Code - Second Try
+--------------------------------------*/
+function chunkArrayInGroups(arr, size) {
+  let newArr = arr.slice(0);
+  const returnArr = [];
+  let emptyArr = [];
+  for (let i = 0; i < newArr.length; i++) {
+    if (i === size-1 && newArr.length !== 0) {
+returnArr.push(newArr.splice(0, i+1));
+i=0;
+    }
+    if (newArr.length < size && newArr.length !==0) {
+      returnArr.push(newArr.splice(0))
+    }
+  }
+ return returnArr;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5,6], 3);
+
+
+
+
 /*
-Final Code - Second Try 
+Final Code - Third Try 
 -----------------------------------------*/
 function chunkArrayInGroups(arr, size) {
   const newArr = [];
