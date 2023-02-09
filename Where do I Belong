@@ -47,4 +47,17 @@ if (sortedArr[sortedArr.length-1] < num) {
   }
   return 0;
 }
+getIndexToIns([40, 60, 1, 10, 24], 50);
+
+
+/*Third Try
+----------------------------------------------------*/
+
+function getIndexToIns(arr, num) {
+  const newArr = arr.slice(0);
+  newArr.push(num);
+  return newArr.sort(function(a,b) {return a-b}).indexOf(num)
+}
+getIndexToIns([40, 60, 1, 10, 24], 50);
+
 
