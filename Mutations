@@ -49,3 +49,13 @@ mutation(["Hello", "hey"]);
 
 
 console.log(mutation(["Hellyo", "hey"]));
+
+
+
+/*
+Final Code - Third Try
+--------------------------------------------*/
+function mutation(arr) {
+return arr[1].toLowerCase().split("").every((item) => {return arr[0].toLowerCase().split("").includes(item)})
+}
+mutation(["Hello", "he"]);
