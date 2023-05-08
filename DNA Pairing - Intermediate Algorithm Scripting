@@ -47,7 +47,7 @@ function pairElement(str) {
 pairElement("GCG")
 
 /*--------------------------------------------------
-Second Try
+Second Try*/
 
 function pairElement(str) {
   const dnaArr = [];
@@ -67,4 +67,17 @@ function pairElement(str) {
 pairElement("GCG");
 */ 
 
+
+/*---------------------------------------------------
+Third Try*/
+
+function pairElement(str) {
+const dnaArr = ["A", "T", "A", "C", "G", "C"];
+const returnArr = [];
+for (let i = 0; i < str.length; i++) {
+  returnArr.push([dnaArr[dnaArr.indexOf(str[i])], dnaArr[dnaArr.indexOf(str[i])+1]])
+}
+return returnArr
+}
+pairElement("TTGAG");
 
